@@ -1,6 +1,6 @@
 module Differ
   module Format
-    module Color
+    module Array
       class << self
         def format(change)
           (change.change? && as_change(change)) ||
@@ -8,21 +8,31 @@ module Differ
           (change.insert? && as_insert(change)) ||
           ''
         end
+        def parse(array)
+			options = {}
+			unless array[0].nil?
+				options[:delete] = array[0]
+			end
+			unless array[1].nil?
+				options[:insert] = array[1]
+			end 
+			return Change.new(options)
+        end
         def type
-			''
+			[]
         end
 
       private
         def as_insert(change)
-          "\033[32m#{change.insert}\033[0m"
+          [nil,change.insert]
         end
 
         def as_delete(change)
-          "\033[31m#{change.delete}\033[0m"
+          [change.delete,nil]
         end
 
         def as_change(change)
-          as_delete(change) << as_insert(change)
+          [change.delete,change.insert]
         end
       end
     end

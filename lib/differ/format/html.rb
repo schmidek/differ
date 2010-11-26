@@ -8,6 +8,9 @@ module Differ
           (change.insert? && as_insert(change)) ||
           ''
         end
+        def type
+			''
+        end
 
       private
         def as_insert(change)

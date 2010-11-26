@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-03-29}
   s.email = %q{pvande@gmail.com}
   s.extra_rdoc_files = ["README.rdoc"]
-  s.files = ["README.rdoc", "VERSION.yml", "lib/differ", "lib/differ/change.rb", "lib/differ/diff.rb", "lib/differ/format", "lib/differ/format/ascii.rb", "lib/differ/format/color.rb", "lib/differ/format/html.rb", "lib/differ/string.rb", "lib/differ.rb", "spec/differ", "spec/differ/change_spec.rb", "spec/differ/diff_spec.rb", "spec/differ/format", "spec/differ/format/ascii_spec.rb", "spec/differ/format/color_spec.rb", "spec/differ/format/html_spec.rb", "spec/differ/string_spec.rb", "spec/differ_spec.rb", "spec/spec_helper.rb"]
+  s.files = ["README.rdoc", "VERSION.yml", "lib/differ", "lib/differ/change.rb", "lib/differ/diff.rb", "lib/differ/format", "lib/differ/format/ascii.rb", "lib/differ/format/color.rb", "lib/differ/format/html.rb", "lib/differ/format/array.rb", "lib/differ/string.rb", "lib/differ.rb", "spec/differ", "spec/differ/change_spec.rb", "spec/differ/diff_spec.rb", "spec/differ/format", "spec/differ/format/ascii_spec.rb", "spec/differ/format/color_spec.rb", "spec/differ/format/html_spec.rb", "spec/differ/string_spec.rb", "spec/differ_spec.rb", "spec/spec_helper.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/pvande/differ}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]

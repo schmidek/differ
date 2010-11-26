@@ -3,6 +3,7 @@ require 'differ/diff'
 require 'differ/format/ascii'
 require 'differ/format/color'
 require 'differ/format/html'
+require 'differ/format/array'
 
 module Differ
   class << self
@@ -34,6 +35,10 @@ module Differ
     def diff_by_line(to, from)
       diff(to, from, "\n")
     end
+    
+    def parse(f,array)
+	  Diff.new(f,array)
+    end
 
     def format=(f)
       @format = format_for(f)
@@ -49,6 +54,7 @@ module Differ
       when :ascii then Format::Ascii
       when :color then Format::Color
       when :html  then Format::HTML
+      when :array then Format::Array
       when nil    then nil
       else raise "Unknown format type #{f.inspect}"
       end

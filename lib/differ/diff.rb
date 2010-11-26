@@ -1,7 +1,17 @@
 module Differ
   class Diff
-    def initialize
-      @raw = []
+    def initialize(f=nil,array=nil)
+      if array.nil?
+		@raw = []
+	  else
+        f = Differ.format_for(f)
+	    @raw = array.collect do |item| 
+	      case item
+	      when String then item
+	      else f.parse(item)  
+	      end
+	    end
+	  end
     end
 
     def same(*str)
@@ -73,7 +83,7 @@ module Differ
 
     def format_as(f)
       f = Differ.format_for(f)
-      @raw.inject('') do |sum, part|
+      @raw.inject(f.type) do |sum, part|
         part = case part
         when String then part
         when Change then f.format(part)
